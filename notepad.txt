@@ -1,0 +1,77 @@
+Project folder:
+P:\react js project\water\full-stack
+
+This project has:
+- Frontend: full-stack\client (Vite + React)
+- Backend: full-stack\server (FastAPI)
+
+Important data location note:
+The backend settings expect these source folders inside full-stack:
+- full-stack\main output
+- full-stack\Datasets
+
+If your data is currently in:
+- P:\react js project\water\main output
+- P:\react js project\water\Datasets
+copy them into full-stack before running (or update server\app\settings.py paths).
+
+==================================================
+1) PREREQUISITES
+==================================================
+Install these once:
+- Python 3.10+ (3.11/3.12/3.13 also ok)
+- Node.js 18+
+- npm
+
+Use existing virtual env at:
+P:\react js project\water\.venv
+or 
+create it 
+cmd: python -m venv .venv
+run: .venv/scripts/Activate.ps1
+or
+run: & ".venv/scripts/Activate.ps1"
+
+==================================================
+2) OPEN TERMINAL AT PROJECT ROOT
+==================================================
+PowerShell:
+cd "P:\react js project\water\Water-mumbai-region-analysis" yaha pe apka location aayega
+or
+git clone https://github.com/Prince200510/Water-mumbai-region-analysis
+cd Water-mumbai-region-analysis
+
+==================================================
+3) BACKEND INSTALL (FASTAPI)
+==================================================
+cd "P:\react js project\water\Water-mumbai-region-analysis\server" yeh mera location hai apka case main alag hoga
+& "..\..\.venv\Scripts\python.exe" -m pip install -r requirements.txt
+
+==================================================
+4) FRONTEND INSTALL (VITE + REACT)
+==================================================
+cd "P:\react js project\water\Water-mumbai-region-analysis\client"
+npm install
+
+==================================================
+5) RUN BACKEND
+==================================================
+Open Terminal 1:
+cd "P:\react js project\water\Water-mumbai-region-analysis\server"
+& "..\..\.venv\Scripts\python.exe" -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+Backend URL:
+http://127.0.0.1:8000
+
+Health check URL:
+http://127.0.0.1:8000/api/health
+
+==================================================
+6) RUN FRONTEND
+==================================================
+Open Terminal 2:
+cd "P:\react js project\water\Water-mumbai-region-analysis\client"
+npm run dev
+
+Frontend URL:
+http://127.0.0.1:5173
