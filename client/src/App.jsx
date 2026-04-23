@@ -5,21 +5,23 @@ import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, ComposedChart, Leg
 import { MdWaterDrop, MdOutlineTableChart, MdTrendingDown, MdWarningAmber, MdSatelliteAlt, MdLayers, MdRefresh, MdOutlineImageSearch, MdOutlineMap, MdDataset, MdCheckCircle, MdErrorOutline } from 'react-icons/md'
 import { FiActivity, FiAlertTriangle, FiBarChart2, FiDroplet, FiEye, FiGrid, FiInfo, FiSearch, FiStar, FiTrendingUp, FiZap, FiX } from 'react-icons/fi'
 import { BiTestTube, BiTargetLock, BiWater, BiStats, BiAbacus } from 'react-icons/bi'
+import { jsPDF } from 'jspdf'
+import autoTable from 'jspdf-autotable'
 
 const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || '/', timeout: 10000 })
 
 const SL = {
-  qualityFlags:   'powai_vihar_analysis__key_findings_flags',
-  monthlyObs:     'powai_vihar_analysis__powai_monthly_observations_clean',
-  summaryStats:   'powai_vihar_analysis__summary_stats_comparison',
-  yearlyHydro:    'analysis__analysis_HydroLAKES_polys_v10_mumbai__analysis_yearly',
-  yearlyPerm:     'analysis__analysis_permWater_clean_mumbai_poly_shp__analysis_yearly',
-  yearlyIND:      'analysis__analysis_IND_water_areas_dcw_mumbai__analysis_yearly',
-  gainHydro:      'analysis__analysis_HydroLAKES_polys_v10_mumbai__analysis_gain_vs_loss',
-  gainPerm:       'analysis__analysis_permWater_clean_mumbai_poly_shp__analysis_gain_vs_loss',
-  gainIND:        'analysis__analysis_IND_water_areas_dcw_mumbai__analysis_gain_vs_loss',
-  summaryHydro:   'analysis__analysis_HydroLAKES_polys_v10_mumbai__analysis_summary',
-  summaryPerm:    'analysis__analysis_permWater_clean_mumbai_poly_shp__analysis_summary',
+  qualityFlags: 'powai_vihar_analysis__key_findings_flags',
+  monthlyObs: 'powai_vihar_analysis__powai_monthly_observations_clean',
+  summaryStats:'powai_vihar_analysis__summary_stats_comparison',
+  yearlyHydro: 'analysis__analysis_HydroLAKES_polys_v10_mumbai__analysis_yearly',
+  yearlyPerm: 'analysis__analysis_permWater_clean_mumbai_poly_shp__analysis_yearly',
+  yearlyIND: 'analysis__analysis_IND_water_areas_dcw_mumbai__analysis_yearly',
+  gainHydro: 'analysis__analysis_HydroLAKES_polys_v10_mumbai__analysis_gain_vs_loss',
+  gainPerm: 'analysis__analysis_permWater_clean_mumbai_poly_shp__analysis_gain_vs_loss',
+  gainIND: 'analysis__analysis_IND_water_areas_dcw_mumbai__analysis_gain_vs_loss',
+  summaryHydro:'analysis__analysis_HydroLAKES_polys_v10_mumbai__analysis_summary',
+  summaryPerm: 'analysis__analysis_permWater_clean_mumbai_poly_shp__analysis_summary',
 }
 
 const C = {
@@ -67,17 +69,17 @@ function SH({title,badge,sub}){return(
 
 function Empty({msg='No data'}){return <div style={{display:'flex',alignItems:'center',justifyContent:'center',height:120,color:C.subtle,fontSize:12}}>{msg}</div>}
 function InsightBox({icon,title,body,accent}){return(
-  <div style={{background:`${accent}12`,border:`1px solid ${accent}30`,borderLeft:`3px solid ${accent}`,borderRadius:8,padding:'10px 14px',display:'flex',gap:10}}>
+  <div style={{background:'#fff',border:`1px solid ${C.border}`,borderRadius:8,padding:'12px 14px',display:'flex',gap:12,boxShadow:'0 1px 3px rgba(0,0,0,0.04)'}}>
     <span style={{color:accent,fontSize:20,flexShrink:0,display:'flex',alignItems:'flex-start',paddingTop:1}}>{icon}</span>
-    <div><div style={{fontSize:12,fontWeight:700,color:accent,marginBottom:2}}>{title}</div><div style={{fontSize:11,color:C.muted,lineHeight:1.6}}>{body}</div></div>
+    <div><div style={{fontSize:12,fontWeight:700,color:'#201F1E',marginBottom:2}}>{title}</div><div style={{fontSize:11,color:C.muted,lineHeight:1.5}}>{body}</div></div>
   </div>
 )}
 
 function KpiCard({title,value,subtitle,accent,icon}){return(
-  <div style={{background:'#fff',borderRadius:10,border:`1px solid ${C.border}`,borderLeft:`4px solid ${accent}`,padding:'14px 16px',boxShadow:'0 1px 4px rgba(0,0,0,0.07)',display:'flex',flexDirection:'column',gap:4}}>
-    <div style={{display:'flex',justifyContent:'space-between'}}><span style={{fontSize:11,fontWeight:700,color:C.muted,textTransform:'uppercase',letterSpacing:'0.05em'}}>{title}</span><span style={{color:accent,fontSize:22,display:'flex',alignItems:'center'}}>{icon}</span></div>
-    <div style={{fontSize:32,fontWeight:800,color:'#201F1E',lineHeight:1,marginTop:4}}>{value??<span className="shimmer" style={{display:'inline-block',width:64,height:28}}/>}</div>
-    <div style={{fontSize:11,color:C.subtle}}>{subtitle}</div>
+  <div style={{background:'#fff',borderRadius:10,border:`1px solid ${C.border}`,padding:'14px 16px',boxShadow:'0 2px 6px rgba(0,0,0,0.03)',display:'flex',flexDirection:'column',gap:4}}>
+    <div style={{display:'flex',justifyContent:'space-between'}}><span style={{fontSize:10,fontWeight:700,color:C.subtle,textTransform:'uppercase',letterSpacing:'0.08em'}}>{title}</span><span style={{color:accent,fontSize:20,display:'flex',alignItems:'center',opacity:0.8}}>{icon}</span></div>
+    <div style={{fontSize:28,fontWeight:850,color:'#111',lineHeight:1,marginTop:6,letterSpacing:'-0.02em'}}>{value??<span className="shimmer" style={{display:'inline-block',width:64,height:28}}/>}</div>
+    <div style={{fontSize:10,color:C.subtle,marginTop:2}}>{subtitle}</div>
   </div>
 )}
 
@@ -103,6 +105,8 @@ export default function App(){
   const [monthlyRows, setMonthlyRows] = useState([])
   const [showAllGallery, setShowAllGallery] = useState(true)
   const [activeImage, setActiveImage] = useState(null)
+  const [mlData, setMlData] = useState(null)
+  const [satData, setSatData] = useState(null)
 
   const loadPanels = async () => {
     const safe = async (url) => { try { const r=await api.get(url,{params:{limit:100}}); return r.data.preview||[] } catch{ return [] } }
@@ -130,6 +134,17 @@ export default function App(){
     ])
     setMonthlyRows(mn)
     setSummaryRows(sm)
+
+    try {
+      const [ml, sat] = await Promise.all([
+        api.get('/api/ml/forecast'),
+        api.get('/api/ml/satellite')
+      ])
+      setMlData(ml.data)
+      setSatData(sat.data)
+    } catch (e) {
+      console.error("ML/Sat fetch error", e)
+    }
   }
 
   const loadBase = async () => {
@@ -174,6 +189,76 @@ export default function App(){
   },[])
   useEffect(()=>{loadSelected(selectedSlug)},[selectedSlug])
   useEffect(()=>{const id=setInterval(()=>refresh(),60000);return()=>clearInterval(id)},[selectedSlug])
+
+  const generatePDFReport = () => {
+    const doc = new jsPDF()
+    const now = new Date().toLocaleString('en-IN')
+    doc.setFontSize(22)
+    doc.setTextColor(0, 120, 212)
+    doc.text('Mumbai Water Intelligence Report', 14, 22)
+    doc.setFontSize(10)
+    doc.setTextColor(100)
+    doc.text(`Generated on: ${now}`, 14, 28)
+    doc.text('Confidential Analysis · Powai & Vihar Lake Systems', 14, 33)
+    doc.setDrawColor(0, 120, 212)
+    doc.setLineWidth(0.5)
+    doc.line(14, 38, 196, 38)
+    doc.setFontSize(14)
+    doc.setTextColor(32)
+    doc.text('1. Executive Summary', 14, 48)
+    doc.setFontSize(10)
+    doc.setTextColor(60)
+    const summary = [
+      "This report provides a comprehensive environmental forecast for the year 2026 based on hybrid intelligence merging",
+      "historical laboratory data (2015-2017) and satellite-derived observations from the Sentinel-2 mission.",
+      `Current analysis covers ${overview?.csv_count} datasets and ${overview?.total_csv_rows.toLocaleString()} individual observations.`,
+      "Key findings indicate significant environmental stress on Powai Lake due to urbanization and organic load."
+    ]
+    doc.text(summary, 14, 55)
+    doc.setFontSize(14)
+    doc.setTextColor(32)
+    doc.text('2. 2026 Water Quality Index (WQI) Forecast', 14, 85)
+    const wqiRows = wqi2026.map(w => [w.location, w.wqi_score.toString(), w.rating])
+    autoTable(doc, {
+      startY: 92,
+      head: [['Location', 'WQI Score (Predicted 2026)', 'Health Rating']],
+      body: wqiRows,
+      theme: 'grid',
+      headStyles: { fillColor: [0, 120, 212] }
+    })
+    doc.setFontSize(14)
+    doc.setTextColor(32)
+    doc.text('3. Hazardous Pollutant Predictions vs WHO Limits', 14, doc.lastAutoTable.finalY + 15)
+    const pollRows = hazardousList.map(h => [h.location, h.parameter, h.predicted_value.toString(), h.who_limit.toString(), h.status])
+    autoTable(doc, {
+      startY: doc.lastAutoTable.finalY + 22,
+      head: [['Lake', 'Parameter', '2026 Prediction (mg/L)', 'WHO Limit', 'Safety Status']],
+      body: pollRows,
+      theme: 'striped',
+      headStyles: { fillColor: [231, 76, 60] }
+    })
+    doc.setFontSize(14)
+    doc.setTextColor(32)
+    doc.text('4. Satellite-Derived Environmental Indices', 14, doc.lastAutoTable.finalY + 15)
+    const satRows = satelliteSummary.slice(-5).map(s => [s.year, s.water_area_ha.toFixed(2), s.turbidity + '%', s.chlorophyll + '%'])
+    autoTable(doc, {
+      startY: doc.lastAutoTable.finalY + 22,
+      head: [['Year', 'Water Area (ha)', 'Turbidity Index', 'Chlorophyll-a Index']],
+      body: satRows,
+      theme: 'grid',
+      headStyles: { fillColor: [16, 124, 16] }
+    })
+
+    const pageCount = doc.internal.getNumberOfPages()
+    for(let i = 1; i <= pageCount; i++) {
+      doc.setPage(i)
+      doc.setFontSize(9)
+      doc.setTextColor(150)
+      doc.text(`Page ${i} of ${pageCount} · Mumbai Water Intelligence`, 14, 285)
+    }
+
+    doc.save(`Mumbai_Water_Health_Report_${new Date().toISOString().split('T')[0]}.pdf`)
+  }
 
   const trendSeries = useMemo(()=>{
     if(!selectedInsights?.trend)return[]
@@ -251,16 +336,36 @@ export default function App(){
   const powaiArea1973=1.264556, powaiArea2014=0.963217
   const powaiShrinkPct = (((powaiArea1973-powaiArea2014)/powaiArea1973)*100).toFixed(1)
 
+  const hazardousList = useMemo(() => {
+    if (!mlData?.training_report?.hazardous_pollutants) return []
+    return mlData.training_report.hazardous_pollutants
+  }, [mlData])
+
+  const satelliteSummary = useMemo(() => {
+    if (!satData?.summary) return []
+    return satData.summary.map(s => ({
+      ...s,
+      year: s.year.toString(),
+      turbidity: +(s.turbidity_index * 100).toFixed(1),
+      chlorophyll: +(s.chlorophyll_index * 100).toFixed(1)
+    }))
+  }, [satData])
+
+  const wqi2026 = useMemo(() => {
+    if (!mlData?.wqi_2026) return []
+    return mlData.wqi_2026
+  }, [mlData])
+
   return(
     <div style={{minHeight:'100vh',background:C.bg,fontFamily:'Inter, sans-serif'}}>
-      <header style={{background:'#fff',borderBottom:`1px solid ${C.border}`,boxShadow:'0 2px 8px rgba(0,0,0,0.08)',padding:'0 24px',height:56,display:'flex',alignItems:'center',justifyContent:'space-between',position:'sticky',top:0,zIndex:100}}>
-        <div style={{display:'flex',alignItems:'center',gap:12}}>
-          <div style={{width:34,height:34,borderRadius:8,background:`linear-gradient(135deg,${C.blue},${C.teal})`,display:'flex',alignItems:'center',justifyContent:'center'}}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2c-5.33 4-8 7.92-8 11a8 8 0 0016 0c0-3.08-2.67-7-8-11z"/></svg>
+      <header style={{background:'#fff',borderBottom:`1px solid ${C.border}`,boxShadow:'0 1px 10px rgba(0,0,0,0.05)',padding:'0 24px',height:64,display:'flex',alignItems:'center',justifyContent:'space-between',position:'sticky',top:0,zIndex:100}}>
+        <div style={{display:'flex',alignItems:'center',gap:14}}>
+          <div style={{width:38,height:38,borderRadius:10,background:`#fff`,border:`1.5px solid ${C.blue}`,display:'flex',alignItems:'center',justifyContent:'center',boxShadow:`inset 0 0 8px ${C.blue}15`}}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={C.blue} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
           </div>
           <div>
-            <div style={{fontSize:15,fontWeight:800,color:'#201F1E',lineHeight:1}}>Mumbai Water Intelligence</div>
-            <div style={{fontSize:10,color:C.subtle,marginTop:2}}>Realtime Water Analytics · Powai & Vihar Lakes</div>
+            <div style={{fontSize:17,fontWeight:900,color:'#111',lineHeight:1.1,letterSpacing:'-0.01em'}}>Mumbai Water Intelligence</div>
+            <div style={{fontSize:10,color:C.subtle,marginTop:2,fontWeight:600,textTransform:'uppercase',letterSpacing:'0.05em'}}>Research Analytics · Powai & Vihar Lake Systems</div>
           </div>
         </div>
         <div style={{display:'flex',alignItems:'center',gap:16}}>
@@ -268,6 +373,10 @@ export default function App(){
           <LiveClock/>
           {syncTime&&<span style={{fontSize:11,color:C.subtle}}>Synced {syncTime}</span>}
           {error&&<span style={{background:C.orangeLight,color:C.orange,fontSize:11,fontWeight:600,padding:'3px 8px',borderRadius:5,display:'flex',alignItems:'center',gap:4}}><MdErrorOutline/> {error.slice(0,40)}</span>}
+          <button id="btn-report" onClick={generatePDFReport}
+            style={{background:'#fff',color:C.blue,border:`1px solid ${C.blue}`,borderRadius:7,padding:'7px 14px',fontSize:12,fontWeight:600,cursor:'pointer',display:'flex',alignItems:'center',gap:6}}>
+            <MdOutlineTableChart size={16}/> Report
+          </button>
           <button id="btn-refresh" onClick={refresh} disabled={loading}
             style={{background:C.blue,color:'#fff',border:'none',borderRadius:7,padding:'7px 14px',fontSize:12,fontWeight:600,cursor:'pointer',display:'flex',alignItems:'center',gap:6,opacity:loading?0.7:1}}>
             <svg style={{width:13,height:13,animation:loading?'spin 0.8s linear infinite':undefined}} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
@@ -296,6 +405,23 @@ export default function App(){
             <InsightBox icon={<FiActivity/>} accent={C.teal}   title="ML Trend Forecasting" body="Linear regression models trained on per-lake yearly area data predict near-future water coverage, flagging lakes at risk of continued decline."/>
           </div>
         </Card>
+
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
+          {wqi2026.map(w => (
+            <Card key={w.location} style={{display:'flex', alignItems:'center', justifyContent:'space-between', padding:'20px'}}>
+              <div>
+                <div style={{fontSize:10, fontWeight:700, color:C.subtle, textTransform:'uppercase', letterSpacing:'0.05em'}}>WQI Forecast 2026</div>
+                <div style={{fontSize:22, fontWeight:900, color:'#111', marginTop:4}}>{w.location} Lake: {w.wqi_score}</div>
+                <div style={{fontSize:12, color: w.wqi_score > 50 ? C.orange : C.green, fontWeight:700, marginTop:2}}>Condition: {w.rating}</div>
+              </div>
+              <div style={{textAlign:'right'}}>
+                <div style={{width:54, height:54, borderRadius:'50%', border:`3px solid ${w.wqi_score > 50 ? C.orangeLight : C.greenLight}`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:900, color: w.wqi_score > 50 ? C.orange : C.green}}>
+                  {Math.round(w.wqi_score)}
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
 
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 320px',gap:14}}>
           <Card>
@@ -461,6 +587,52 @@ export default function App(){
             </>
           )}
         </Card>
+
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
+          <Card>
+            <SH title="2026 Pollutant Forecast vs WHO Limits" badge="ML Prediction" sub="Predicted chemical concentration levels for 2026 using Random Forest Regression"/>
+            <div className="inner-scroll" style={{maxHeight:300}}>
+              <table className="data-table">
+                <thead><tr><th>Location</th><th>Parameter</th><th>2026 Pred</th><th>WHO Limit</th><th>Status</th></tr></thead>
+                <tbody>
+                  {hazardousList.map((h, i) => (
+                    <tr key={i}>
+                      <td style={{fontWeight:700}}>{h.location}</td>
+                      <td style={{color:C.blue}}>{h.parameter}</td>
+                      <td style={{fontWeight:800}}>{h.predicted_value}</td>
+                      <td style={{color:C.subtle}}>{h.who_limit}</td>
+                      <td>
+                        <span style={{
+                          background: h.status === 'Safe' ? C.greenLight : h.status === 'Warning' ? C.yellowLight : C.orangeLight,
+                          color: h.status === 'Safe' ? C.green : h.status === 'Warning' ? C.yellow : C.orange,
+                          fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 4
+                        }}>
+                          {h.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Card>
+          <Card>
+            <SH title="Satellite Water Quality Indices" badge="MNDWI Analysis" sub="Turbidity and Chlorophyll-a index trends derived from satellite band ratios"/>
+            {satelliteSummary.length === 0 ? <Empty/> : (
+              <ResponsiveContainer width="100%" height={260}>
+                <LineChart data={satelliteSummary} margin={{top:10, right:20, left:0, bottom:0}}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#F3F2F1" vertical={false}/>
+                  <XAxis dataKey="year" tick={{fontSize:11}}/>
+                  <YAxis tick={{fontSize:10}} label={{value:'Index %', angle:-90, position:'insideLeft', fontSize:10}}/>
+                  <Tooltip content={<CT/>}/>
+                  <Legend iconType="circle" wrapperStyle={{fontSize:11, paddingTop:10}}/>
+                  <Line type="monotone" dataKey="turbidity" name="Turbidity Index" stroke={C.orange} strokeWidth={3} dot={{r:4}} activeDot={{r:6}}/>
+                  <Line type="monotone" dataKey="chlorophyll" name="Chlorophyll-a" stroke={C.greenMid} strokeWidth={3} dot={{r:4}} activeDot={{r:6}}/>
+                </LineChart>
+              </ResponsiveContainer>
+            )}
+          </Card>
+        </div>
 
         <Card style={{padding:0,overflow:'hidden'}}>
           <div style={{display:'grid',gridTemplateColumns:'220px 1fr',height:520}}>

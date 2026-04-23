@@ -62,3 +62,11 @@ def get_images() -> dict:
 @app.get("/api/shapefiles")
 def get_shapefiles() -> dict:
     return {"items": analytics.list_shapefiles()}
+
+@app.get("/api/ml/forecast")
+def get_ml_forecast() -> dict:
+    return analytics.ml_forecast()
+
+@app.get("/api/ml/satellite")
+def get_ml_satellite() -> dict:
+    return analytics.satellite_indices()

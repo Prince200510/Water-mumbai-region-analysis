@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 import numpy as np
 import pandas as pd
-from app.settings import DATA_ROOT, LOCAL_DATASETS, LOCAL_MAIN_OUTPUT
+from app.settings import DATA_ROOT, LOCAL_DATASETS, LOCAL_MAIN_OUTPUT, ML_ROOT
 from functools import lru_cache
 
 if importlib.util.find_spec("geopandas"):
@@ -280,3 +280,48 @@ def predictions(limit: int = 50) -> list[dict[str, Any]]:
 
     out.sort(key=lambda x: x["name"])
     return out[:limit]
+
+
+def ml_forecast() -> dict[str, Any]:
+    if not ML_ROOT.exists():
+        return {"error": "ML results not found"}
+
+    try:
+        preds_path = ML_ROOT / "predictions_2026.csv"
+        wqi_path = ML_ROOT / "wqi_2026.csv"
+        report_path = ML_ROOT / "training_report.json"
+
+        preds = pd.read_csv(preds_path).replace({np.nan: None}).to_dict(orient="records")
+        wqi = pd.read_csv(wqi_path).replace({np.nan: None}).to_dict(orient="records")
+
+        import json
+
+        with open(report_path, "r") as f:
+            report = json.load(f)
+
+        return {
+            "predictions_2026": preds,
+            "wqi_2026": wqi,
+            "training_report": report,
+        }
+    except Exception as exc:
+        return {"error": str(exc)}
+
+
+def satellite_indices() -> dict[str, Any]:
+    if not ML_ROOT.exists():
+        return {"error": "ML results not found"}
+
+    try:
+        results_path = ML_ROOT / "satellite_analysis_results.csv"
+        summary_path = ML_ROOT / "satellite_summary_yearly.csv"
+
+        results = pd.read_csv(results_path).replace({np.nan: None}).to_dict(orient="records")
+        summary = pd.read_csv(summary_path).replace({np.nan: None}).to_dict(orient="records")
+
+        return {
+            "results": results,
+            "summary": summary,
+        }
+    except Exception as exc:
+        return {"error": str(exc)}

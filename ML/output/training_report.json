@@ -1,0 +1,269 @@
+{
+  "training_samples": 98,
+  "parameters_modeled": 26,
+  "prediction_year": 2026,
+  "model_performance": {
+    "Ammonia-nitrogen": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.03564
+    },
+    "Biochemical oxygen demand": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.3816
+    },
+    "Calcium": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 5.1024
+    },
+    "Chromium": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.001296
+    },
+    "Copper": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.003096
+    },
+    "Dissolved oxygen": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.3864
+    },
+    "Electrical conductivity": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.0504
+    },
+    "Iron": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.040464
+    },
+    "Lead": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 9.6e-05
+    },
+    "Magnesium": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.0312
+    },
+    "Nickel": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.001032
+    },
+    "Nitrate-nitrogen": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.06336
+    },
+    "Potassium": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.7128
+    },
+    "Reactive phosphorus": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.007824
+    },
+    "Sodium": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 3.5952
+    },
+    "Total alkalinity": {
+      "type": "random_forest",
+      "samples": 10,
+      "r2": -0.6299,
+      "mae": 49.42631
+    },
+    "Total carbon": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 10.2
+    },
+    "Total organic carbon": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 4.4136
+    },
+    "Transparency": {
+      "type": "random_forest",
+      "samples": 10,
+      "r2": -172.3036,
+      "mae": 15.455021
+    },
+    "Water temperature": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.1968
+    },
+    "pH": {
+      "type": "random_forest",
+      "samples": 2,
+      "r2": 0.768,
+      "mae": 0.072
+    },
+    "Conductivity": {
+      "type": "random_forest",
+      "samples": 8,
+      "r2": 0.3944,
+      "mae": 14.2015
+    },
+    "Nitrate": {
+      "type": "random_forest",
+      "samples": 8,
+      "r2": 0.9865,
+      "mae": 0.043253
+    },
+    "Phosphate": {
+      "type": "random_forest",
+      "samples": 8,
+      "r2": 0.0,
+      "mae": 0.028783
+    },
+    "Sulphate": {
+      "type": "random_forest",
+      "samples": 8,
+      "r2": -0.5845,
+      "mae": 0.255513
+    },
+    "Total hardness": {
+      "type": "random_forest",
+      "samples": 8,
+      "r2": -12.3998,
+      "mae": 4.392333
+    }
+  },
+  "wqi_results": [
+    {
+      "location": "Powai",
+      "year": 2026,
+      "wqi_score": 51.61,
+      "rating": "Poor"
+    },
+    {
+      "location": "Vihar",
+      "year": 2026,
+      "wqi_score": 47.55,
+      "rating": "Good"
+    }
+  ],
+  "hazardous_pollutants": [
+    {
+      "parameter": "Chromium",
+      "location": "Powai",
+      "predicted_year": 2026,
+      "predicted_value": 0.003888,
+      "who_limit": 0.05,
+      "status": "Safe",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Chromium",
+      "location": "Vihar",
+      "predicted_year": 2026,
+      "predicted_value": 0.006696,
+      "who_limit": 0.05,
+      "status": "Safe",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Copper",
+      "location": "Powai",
+      "predicted_year": 2026,
+      "predicted_value": 0.009438,
+      "who_limit": 2.0,
+      "status": "Safe",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Copper",
+      "location": "Vihar",
+      "predicted_year": 2026,
+      "predicted_value": 0.016146,
+      "who_limit": 2.0,
+      "status": "Safe",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Iron",
+      "location": "Powai",
+      "predicted_year": 2026,
+      "predicted_value": 0.319692,
+      "who_limit": 0.3,
+      "status": "Dangerous",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Iron",
+      "location": "Vihar",
+      "predicted_year": 2026,
+      "predicted_value": 0.407364,
+      "who_limit": 0.3,
+      "status": "Dangerous",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Lead",
+      "location": "Powai",
+      "predicted_year": 2026,
+      "predicted_value": 0.004488,
+      "who_limit": 0.01,
+      "status": "Safe",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Lead",
+      "location": "Vihar",
+      "predicted_year": 2026,
+      "predicted_value": 0.004696,
+      "who_limit": 0.01,
+      "status": "Safe",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Nickel",
+      "location": "Powai",
+      "predicted_year": 2026,
+      "predicted_value": 0.030254,
+      "who_limit": 0.07,
+      "status": "Safe",
+      "unit": "mg/L"
+    },
+    {
+      "parameter": "Nickel",
+      "location": "Vihar",
+      "predicted_year": 2026,
+      "predicted_value": 0.028018,
+      "who_limit": 0.07,
+      "status": "Safe",
+      "unit": "mg/L"
+    }
+  ]
+}

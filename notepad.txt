@@ -1,77 +1,211 @@
+MUMBAI WATER INTELLIGENCE DASHBOARD
+
 Project folder:
-P:\react js project\water\full-stack
+P:\react js project\water\Water-mumbai-region-analysis
 
-This project has:
-- Frontend: full-stack\client (Vite + React)
-- Backend: full-stack\server (FastAPI)
+This is a full-stack water analysis project.
 
-Important data location note:
-The backend settings expect these source folders inside full-stack:
-- full-stack\main output
-- full-stack\Datasets
+What it does:
+- Frontend shows charts, cards, tables, and satellite plots.
+- Backend reads CSV files, images, and shapefiles.
+- The dashboard refreshes data and shows live analysis.
 
-If your data is currently in:
-- P:\react js project\water\main output
-- P:\react js project\water\Datasets
-copy them into full-stack before running (or update server\app\settings.py paths).
+Main folders:
+- client = React frontend
+- server = FastAPI backend
+- main output = generated CSV files and plots
+- Datasets = shapefiles and source geospatial data
 
 ==================================================
-1) PREREQUISITES
+1) SIMPLE EXPLANATION OF THE DASHBOARD
 ==================================================
-Install these once:
-- Python 3.10+ (3.11/3.12/3.13 also ok)
-- Node.js 18+
+
+The dashboard is made to help a person understand water data quickly.
+
+Top header:
+- Shows the project name.
+- Shows live status.
+- Shows the last sync time.
+- Refresh button updates the dashboard.
+
+Main number cards:
+- CSV Datasets: total number of CSV files found.
+- Plot Images: total number of chart images found.
+- Shapefiles: total number of spatial files found.
+- Total Rows: total rows across all CSV files.
+
+Insight cards:
+- These give short easy summary points.
+- Example: lake shrinkage, pollution difference, yearly water change, prediction note.
+
+Charts section:
+- Dataset Volume by File: shows which CSV files are largest.
+- Shapefile Feature Counts: shows how many features each spatial file has.
+- Dataset Categories: shows what type of data exists in the project.
+
+Water area and quality section:
+- Annual Water Coverage 2022–2026: shows how water area changes over years.
+- Water Gain vs Loss: shows where water area increased or decreased.
+- Water Transparency: shows water clarity in Powai Lake over time.
+
+Water quality comparison section:
+- Powai vs Vihar comparison: compares water quality values between the two lakes.
+- Table below the chart explains each parameter in simple numeric form.
+
+CSV explorer section:
+- Left side shows all CSV files.
+- Middle section shows the selected file.
+- Trend tab shows graph of values.
+- Stats tab shows minimum, maximum, mean, median, and standard deviation.
+- Raw Data tab shows the actual rows from the CSV.
+
+Prediction section:
+- Shows simple forecast values.
+- This is not a perfect future result.
+- It is a basic trend-based estimate from the available data.
+
+Satellite plot library:
+- Shows image plots saved in the project.
+- These are visual results made from water and satellite analysis.
+
+==================================================
+2) WHAT EACH SCREEN MEANS
+==================================================
+
+Screen 1: Dashboard overview
+- This is the first screen.
+- It gives the big picture.
+- It tells how many files, images, shapefiles, and rows are present.
+
+Screen 2: Statistics and summary cards
+- These cards show the main findings in short words.
+- Example: Powai Lake shrinkage, pollution, and trend warning.
+
+Screen 3: Water area over years
+- This screen shows whether lake area is going up or down.
+- A higher line means more water area.
+- A lower line means less water area.
+
+Screen 4: Gain and loss graph
+- Green bars show gain.
+- Red bars show loss.
+- Blue bars show net change.
+
+Screen 5: Transparency chart
+- Transparency means how clear the water is.
+- Higher transparency usually means cleaner-looking water.
+
+Screen 6: Powai vs Vihar quality comparison
+- This screen compares both lakes side by side.
+- It helps understand which lake has more concern in certain values.
+
+Screen 7: CSV explorer
+- This screen is for checking one file at a time.
+- You can see graph, stats, and raw data.
+
+Screen 8: Forecast and prediction feed
+- This screen shows simple prediction outputs.
+- It is used to understand future direction from existing data.
+
+Screen 9: Satellite plot gallery
+- This screen shows plot images.
+- Each image is a saved result from the analysis.
+
+==================================================
+3) HOW THE DATA FLOW WORKS
+==================================================
+
+Step 1:
+Raw data is stored in CSV, image, and shapefile format.
+
+Step 2:
+The backend scans the folders and finds new files.
+
+Step 3:
+The backend reads the files and makes summary data.
+
+Step 4:
+The frontend asks the backend for data.
+
+Step 5:
+The dashboard shows cards, charts, tables, and plots.
+
+Step 6:
+When you press Refresh, the backend syncs again and the frontend updates.
+
+==================================================
+4) HOW TO RUN THE PROJECT
+==================================================
+
+Prerequisites:
+- Python 3.10 or higher
+- Node.js 18 or higher
 - npm
 
-Use existing virtual env at:
-P:\react js project\water\.venv
-or 
-create it 
-cmd: python -m venv .venv
-run: .venv/scripts/Activate.ps1
-or
-run: & ".venv/scripts/Activate.ps1"
+Create virtual environment if needed:
+python -m venv .venv
 
-==================================================
-2) OPEN TERMINAL AT PROJECT ROOT
-==================================================
-PowerShell:
-cd "P:\react js project\water\Water-mumbai-region-analysis" yaha pe apka location aayega
-or
-git clone https://github.com/Prince200510/Water-mumbai-region-analysis
-cd Water-mumbai-region-analysis
+Activate it in PowerShell:
+.\.venv\Scripts\Activate.ps1
 
-==================================================
-3) BACKEND INSTALL (FASTAPI)
-==================================================
-cd "P:\react js project\water\Water-mumbai-region-analysis\server" yeh mera location hai apka case main alag hoga
+Backend install:
+cd "P:\react js project\water\Water-mumbai-region-analysis\server"
 & "..\..\.venv\Scripts\python.exe" -m pip install -r requirements.txt
 
-==================================================
-4) FRONTEND INSTALL (VITE + REACT)
-==================================================
+Frontend install:
 cd "P:\react js project\water\Water-mumbai-region-analysis\client"
 npm install
 
-==================================================
-5) RUN BACKEND
-==================================================
-Open Terminal 1:
+Run backend:
 cd "P:\react js project\water\Water-mumbai-region-analysis\server"
 & "..\..\.venv\Scripts\python.exe" -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 
-Backend URL:
-http://127.0.0.1:8000
-
-Health check URL:
-http://127.0.0.1:8000/api/health
-
-==================================================
-6) RUN FRONTEND
-==================================================
-Open Terminal 2:
+Run frontend:
 cd "P:\react js project\water\Water-mumbai-region-analysis\client"
 npm run dev
 
-Frontend URL:
-http://127.0.0.1:5173
+Open in browser:
+- Frontend: http://127.0.0.1:5173
+- Backend: http://127.0.0.1:8000
+- Health check: http://127.0.0.1:8000/api/health
+
+==================================================
+5) COMMON PROBLEMS AND EASY FIXES
+==================================================
+
+Problem: Frontend says Network Error
+Meaning:
+- Backend is not running or not reachable.
+Fix:
+- Start the backend again.
+- Check the backend terminal for errors.
+
+Problem: Port 8000 is busy
+Meaning:
+- Another process is already using backend port 8000.
+Fix:
+- Stop that process.
+- Or run backend on another port.
+
+Problem: Dashboard opens but data is empty
+Meaning:
+- The backend did not find the data files.
+Fix:
+- Make sure main output and Datasets folders exist in the project.
+
+Problem: Charts do not show
+Meaning:
+- The browser could not get data from the API.
+Fix:
+- Refresh the page.
+- Check backend health URL.
+
+==================================================
+6) EASY SUMMARY FOR ANY READER
+==================================================
+
+This project is a water intelligence dashboard.
+It reads real files, makes charts, and shows the result in a clean screen.
+It helps understand water area, water quality, shapefiles, images, and prediction trends in simple form.
+
+That is the whole process.
