@@ -412,10 +412,10 @@ export default function App(){
               <div>
                 <div style={{fontSize:10, fontWeight:700, color:C.subtle, textTransform:'uppercase', letterSpacing:'0.05em'}}>WQI Forecast 2026</div>
                 <div style={{fontSize:22, fontWeight:900, color:'#111', marginTop:4}}>{w.location} Lake: {w.wqi_score}</div>
-                <div style={{fontSize:12, color: w.wqi_score > 50 ? C.orange : C.green, fontWeight:700, marginTop:2}}>Condition: {w.rating}</div>
+                <div style={{fontSize:12, color: w.wqi_score <= 30 ? C.green : w.wqi_score <= 60 ? C.green : C.red, fontWeight:700, marginTop:2}}>Condition: {w.rating}</div>
               </div>
               <div style={{textAlign:'right'}}>
-                <div style={{width:54, height:54, borderRadius:'50%', border:`3px solid ${w.wqi_score > 50 ? C.orangeLight : C.greenLight}`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:900, color: w.wqi_score > 50 ? C.orange : C.green}}>
+                <div style={{width:54, height:54, borderRadius:'50%', border:`3px solid ${w.wqi_score <= 30 ? C.greenLight : w.wqi_score <= 60 ? C.orangeLight : '#FADBD8'}`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:900, color: w.wqi_score <= 30 ? C.green : w.wqi_score <= 60 ? C.orange : C.red}}>
                   {Math.round(w.wqi_score)}
                 </div>
               </div>

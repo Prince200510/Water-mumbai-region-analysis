@@ -2,7 +2,7 @@ from __future__ import annotations
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from app.services import analytics, sync_data
+from app.services import analytics, sync_data, mcp_collector
 from app.settings import DATA_ROOT
 
 app = FastAPI(title="Mumbai Water Analytics API", version="1.0.0")
@@ -15,10 +15,6 @@ app.add_middleware(
 )
 
 app.mount("/assets", StaticFiles(directory=DATA_ROOT), name="assets")
-
-@app.on_event("startup")
-def startup_event() -> None:
-    pass
 
 @app.get("/api/health")
 def health() -> dict:
@@ -70,3 +66,7 @@ def get_ml_forecast() -> dict:
 @app.get("/api/ml/satellite")
 def get_ml_satellite() -> dict:
     return analytics.satellite_indices()
+
+@app.post("/api/mcp/collect")
+def collect_data() -> dict:
+    return mcp_collector.collect_latest_water_data()

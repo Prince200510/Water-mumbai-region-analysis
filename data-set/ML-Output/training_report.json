@@ -165,13 +165,13 @@
       "location": "Powai",
       "year": 2026,
       "wqi_score": 51.61,
-      "rating": "Moderate"
+      "rating": "Poor"
     },
     {
       "location": "Vihar",
       "year": 2026,
       "wqi_score": 47.55,
-      "rating": "Moderate"
+      "rating": "Good"
     }
   ],
   "hazardous_pollutants": [

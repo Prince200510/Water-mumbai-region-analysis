@@ -1,0 +1,84 @@
+source_title,source_year,record_type,location,observation_year,month,parameter,unit,powai_min,powai_max,powai_mean,vihar_min,vihar_max,vihar_mean,notes,
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Water temperature,C,20.33,26.33,22.96,21.33,27.67,23.78,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Transparency,cm,59.33,84.33,73.87,83,109.33,92.65,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,pH,no unit,7.8,8.4,8.01,7.5,7.9,7.71,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Electrical conductivity,mS/cm,0.3,0.43,0.35,0.1,0.24,0.14,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Dissolved oxygen,mg/L,3.58,7.19,5.04,5.6,8.8,6.65,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Biochemical oxygen demand,mg/L,1.77,4.68,3.05,0.92,2.11,1.46,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Total alkalinity,mg/L,136.1,159,144.95,46.47,66.5,54.06,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Reactive phosphorus,mg/L,0.087,0.21,0.137,0.01,0.182,0.1044,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Nitrate-nitrogen,mg/L,0.366,0.622,0.4971,0.123,0.321,0.2331,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Ammonia-nitrogen,mg/L,0.061,0.556,0.2696,0.037,0.332,0.1211,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Sodium,mg/L,10.13,24.23,20.48,1.47,9.3,5.5,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Potassium,mg/L,6.33,11.07,8.36,10.9,12.3,11.33,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Calcium,mg/L,14.21,31.47,25.55,1.73,7.13,4.29,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Magnesium,mg/L,2.78,10.32,6.71,3.91,12.17,6.58,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Total carbon,mg/L,56.52,88.04,65.89,17.83,32.79,23.39,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Total organic carbon,mg/L,24.04,47.85,30.36,6.31,22.57,11.97,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Copper,mg/L,0.004,0.015,0.0066,0.0027,0.0377,0.0195,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Chromium,mg/L,0.001,0.004,0.0027,0.0037,0.0197,0.0081,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Iron,mg/L,0.114,0.485,0.2826,0.106,0.844,0.4512,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Nickel,mg/L,0.0213,0.0357,0.0312,0.0187,0.043,0.0269,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,summary_stats,Powai/Vihar,,,,Lead,mg/L,0.0035,0.0053,0.0044,0.0038,0.0054,0.0048,Powai vs Vihar summary from Table 3
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,index_summary,Powai/Vihar,2015,,Nygaard compound quotient,index,9,,,4.85,,,Powai eutrophic; Vihar weakly eutrophic,
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,index_summary,Powai/Vihar,2015,,Palmers pollution index,index,32,,,15,,,Powai high organic pollution; Vihar probable organic pollution,
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,area_snapshot,Powai,1973,,Lake area,sq km,1.264556,,,,,,Satellite-derived area from Table 7,
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,area_snapshot,Powai,2014,,Lake area,sq km,0.963217,,,,,,Satellite-derived area from Table 7,
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,area_snapshot,Vihar,1973,,Lake area,sq km,,,,,3.310656,Satellite-derived area from Table 7,,
+State of Water Quality of Two Tropical Urban Lakes Located at Mumbai Megacity,2015,area_snapshot,Vihar,2014,,Lake area,sq km,,,,,3.775545,Satellite-derived area from Table 7,,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Oct,Transparency,cm,94,94,94,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Nov,Transparency,cm,89,89,89,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Dec,Transparency,cm,78,78,78,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Jan,Transparency,cm,73,73,73,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Feb,Transparency,cm,77,77,77,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Mar,Transparency,cm,74,74,74,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Apr,Transparency,cm,95,95,95,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,May,Transparency,cm,92,92,92,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Oct,Conductivity,mhos/cm,170,170,170,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Nov,Conductivity,mhos/cm,169,169,169,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Dec,Conductivity,mhos/cm,148,148,148,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Jan,Conductivity,mhos/cm,158,158,158,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Feb,Conductivity,mhos/cm,164,164,164,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Mar,Conductivity,mhos/cm,131,131,131,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Apr,Conductivity,mhos/cm,120,120,120,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,May,Conductivity,mhos/cm,156,156,156,,,,Reported as mhos/cm in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Oct,Total alkalinity,mg/L,167,167,167,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Nov,Total alkalinity,mg/L,159,159,159,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Dec,Total alkalinity,mg/L,162,162,162,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Jan,Total alkalinity,mg/L,153,153,153,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Feb,Total alkalinity,mg/L,171,171,171,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Mar,Total alkalinity,mg/L,143,143,143,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Apr,Total alkalinity,mg/L,161,161,161,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,May,Total alkalinity,mg/L,166,166,166,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Oct,Total hardness,mg/L,198,198,198,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Nov,Total hardness,mg/L,185,185,185,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Dec,Total hardness,mg/L,174,174,174,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Jan,Total hardness,mg/L,165,165,165,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Feb,Total hardness,mg/L,180,180,180,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Mar,Total hardness,mg/L,182,182,182,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Apr,Total hardness,mg/L,169,169,169,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,May,Total hardness,mg/L,183,183,183,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Oct,Phosphate,mg/ml (as reported),0.9,0.9,0.9,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Nov,Phosphate,mg/ml (as reported),0.7,0.7,0.7,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Dec,Phosphate,mg/ml (as reported),0.4,0.4,0.4,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Jan,Phosphate,mg/ml (as reported),0.8,0.8,0.8,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Feb,Phosphate,mg/ml (as reported),0.8,0.8,0.8,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Mar,Phosphate,mg/ml (as reported),0.7,0.7,0.7,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Apr,Phosphate,mg/ml (as reported),0.5,0.5,0.5,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,May,Phosphate,mg/ml (as reported),0.6,0.6,0.6,,,,Units reported as mg/ml in paper,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Oct,Sulphate,mg/L,2.1,2.1,2.1,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Nov,Sulphate,mg/L,2.4,2.4,2.4,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Dec,Sulphate,mg/L,2.6,2.6,2.6,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Jan,Sulphate,mg/L,2.8,2.8,2.8,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Feb,Sulphate,mg/L,2.9,2.9,2.9,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Mar,Sulphate,mg/L,2.9,2.9,2.9,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Apr,Sulphate,mg/L,2.09,2.09,2.09,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,May,Sulphate,mg/L,2.1,2.1,2.1,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Oct,Nitrate,mg/L,0.5,0.5,0.5,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Nov,Nitrate,mg/L,0.9,0.9,0.9,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2016,Dec,Nitrate,mg/L,1.2,1.2,1.2,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Jan,Nitrate,mg/L,1.7,1.7,1.7,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Feb,Nitrate,mg/L,1.7,1.7,1.7,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Mar,Nitrate,mg/L,1.9,1.9,1.9,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,Apr,Nitrate,mg/L,1.9,1.9,1.9,,,,Single monthly observation from Table 1,
+"Assessment of Water Quality of Powai Lake, Mumbai, India",2018,monthly_observation,Powai,2017,May,Nitrate,mg/L,2.01,2.01,2.01,,,,Single monthly observation from Table 1,

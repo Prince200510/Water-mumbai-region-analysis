@@ -253,16 +253,12 @@ def calculate_wqi(predictions, location):
     return round(wqi, 2)
 
 def get_wqi_rating(wqi):
-    if wqi <= 25:
-        return "Excellent"
-    elif wqi <= 50:
-        return "Good"
-    elif wqi <= 75:
-        return "Poor"
-    elif wqi <= 100:
-        return "Very Poor"
+    if wqi <= 30:
+        return "High"
+    elif wqi <= 60:
+        return "Moderate"
     else:
-        return "Unfit for Drinking"
+        return "Poor"
 
 def main():
     df = prepare_training_data()

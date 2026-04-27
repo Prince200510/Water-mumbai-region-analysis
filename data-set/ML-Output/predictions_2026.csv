@@ -1,0 +1,53 @@
+parameter,location,predicted_year,predicted_value,who_limit,status,unit
+Ammonia-nitrogen,Powai,2026,0.23693,1.5,Safe,mg/L
+Ammonia-nitrogen,Vihar,2026,0.15971,1.5,Safe,mg/L
+Biochemical oxygen demand,Powai,2026,2.7002,3.0,Warning,mg/L
+Biochemical oxygen demand,Vihar,2026,1.8734,3.0,Moderate,mg/L
+Calcium,Powai,2026,20.8728,75.0,Safe,mg/L
+Calcium,Vihar,2026,9.8176,75.0,Safe,mg/L
+Chromium,Powai,2026,0.003888,0.05,Safe,mg/L
+Chromium,Vihar,2026,0.006696,0.05,Safe,mg/L
+Copper,Powai,2026,0.009438,2.0,Safe,mg/L
+Copper,Vihar,2026,0.016146,2.0,Safe,mg/L
+Dissolved oxygen,Powai,2026,5.3942,5.0,Safe,mg/L
+Dissolved oxygen,Vihar,2026,6.2314,5.0,Safe,mg/L
+Electrical conductivity,Powai,2026,0.3038,0.4,Moderate,mg/L
+Electrical conductivity,Vihar,2026,0.1946,0.4,Safe,mg/L
+Iron,Powai,2026,0.319692,0.3,Dangerous,mg/L
+Iron,Vihar,2026,0.407364,0.3,Dangerous,mg/L
+Lead,Powai,2026,0.004488,0.01,Safe,mg/L
+Lead,Vihar,2026,0.004696,0.01,Safe,mg/L
+Magnesium,Powai,2026,6.6814,30.0,Safe,mg/L
+Magnesium,Vihar,2026,6.6138,30.0,Safe,mg/L
+Nickel,Powai,2026,0.030254,0.07,Safe,mg/L
+Nickel,Vihar,2026,0.028018,0.07,Safe,mg/L
+Nitrate-nitrogen,Powai,2026,0.43902,50.0,Safe,mg/L
+Nitrate-nitrogen,Vihar,2026,0.30174,50.0,Safe,mg/L
+Potassium,Powai,2026,9.0134,12.0,Moderate,mg/L
+Potassium,Vihar,2026,10.5578,12.0,Warning,mg/L
+Reactive phosphorus,Powai,2026,0.129828,0.1,Dangerous,mg/L
+Reactive phosphorus,Vihar,2026,0.112876,0.1,Dangerous,mg/L
+Sodium,Powai,2026,17.1844,200.0,Safe,mg/L
+Sodium,Vihar,2026,9.3948,200.0,Safe,mg/L
+Total alkalinity,Powai,2026,158.659464,200.0,Moderate,mg/L
+Total alkalinity,Vihar,2026,158.659464,200.0,Moderate,mg/L
+Total carbon,Powai,2026,56.54,100.0,Moderate,mg/L
+Total carbon,Vihar,2026,34.44,100.0,Safe,mg/L
+Total organic carbon,Powai,2026,26.3142,50.0,Moderate,mg/L
+Total organic carbon,Vihar,2026,16.7514,50.0,Safe,mg/L
+Transparency,Powai,2026,78.905024,100.0,Moderate,mg/L
+Transparency,Vihar,2026,78.905024,100.0,Moderate,mg/L
+Water temperature,Powai,2026,23.1404,30.0,Moderate,mg/L
+Water temperature,Vihar,2026,23.5668,30.0,Moderate,mg/L
+pH,Powai,2026,7.944,8.5,Safe,mg/L
+pH,Vihar,2026,7.788,8.5,Safe,mg/L
+Conductivity,Powai,2026,149.316667,500.0,Safe,mg/L
+Conductivity,Vihar,2026,149.316667,500.0,Safe,mg/L
+Nitrate,Powai,2026,1.817862,50.0,Safe,mg/L
+Nitrate,Vihar,2026,1.817862,50.0,Safe,mg/L
+Phosphate,Powai,2026,0.673683,5.0,Safe,mg/L
+Phosphate,Vihar,2026,0.673683,5.0,Safe,mg/L
+Sulphate,Powai,2026,2.460792,250.0,Safe,mg/L
+Sulphate,Vihar,2026,2.460792,250.0,Safe,mg/L
+Total hardness,Powai,2026,174.312667,300.0,Moderate,mg/L
+Total hardness,Vihar,2026,174.312667,300.0,Moderate,mg/L
